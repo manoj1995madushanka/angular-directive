@@ -12,7 +12,10 @@
         </li>
       </ul>
       <ng-template [ngIf]="onlyOdd">
-        <p>Only odd</p>
+        <p *ngFor="let odd of oddNumbers">{{odd}}</p>
+      </ng-template>
+      <ng-template [ngIf]="!onlyOdd">
+        <p *ngFor="let even of evenNumbers">{{even}}</p>
       </ng-template>
     </div>
   </div>
