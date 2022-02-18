@@ -30,6 +30,18 @@
   </div>
   <hr>
   <div class="row">
-    <p appBetterHighlight [defaultColor]="'yellow'" [highlightColor]="'red'" >This is usage of custom directive</p>
+    <p appBetterHighlight [defaultColor]="'yellow'" [highlightColor]="'red'">This is usage of custom directive</p>
+  </div>
+
+  <!--using custom *ngIf directive-->
+  <div *appUnless="onlyOdd">
+    <li
+      class="list-group-item"
+      *ngFor="let number of numbers"
+      [ngClass]="{number: number%2!==0}"
+      [ngStyle]="{number: number%2!==0? 'yellow':'transparent'}"
+    >
+      {{number}}
+    </li>
   </div>
 </div>
